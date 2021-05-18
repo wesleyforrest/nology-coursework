@@ -1,0 +1,33 @@
+.header {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #55a5f0;
+}
+
+.footer {
+    height: 40px;
+    background-color: $color-primary;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .footer__logo {
+        font-family: $font-display;
+        font-size: 20px;
+        color: $color-white;
+    }
+    
+    .footer__text {
+        color: $color-white;
+    }
+}

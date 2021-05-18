@@ -1,0 +1,31 @@
+* {
+    padding: 10px;
+}
+
+[class^="background"] {
+    background-color: white ;
+}
+
+[class^="row"] {
+    border: 2px solid #FFF;
+    min-height: 300px;
+    padding: 10px;
+}
+
+[class^="sec"] {
+    background-color: #c3aed6; ;
+}
+
+
+[class^="col"] {
+    padding: 10px;
+    background-color: #ffd5cd;
+    text-align: center;
+    color: #8675a9;
+    border: 2px solid #8675a9;
+    height: 150px;
+    border-radius: 5px;
+}
+
+
+

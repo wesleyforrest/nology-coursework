@@ -1,0 +1,10 @@
+nav {
+    background-color: navy;
+    color: goldenrod;
+    height: 50px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,69 @@
+* {
+  font-size: 40px;
+  color: white;
+  margin: 0;
+}
+
+.germany {
+  background-color: white;
+  color: black;
+  width: 700px;
+  height: 400px;
+  position: relative;
+}
+
+.color-black {
+  color: black;
+  background-color: black;
+  height: 30%;
+}
+
+.color-red {
+  color: red;
+  background-color:red;
+  height: 30%;
+}
+
+.color-yellow {
+  color: yellow;
+  background-color:yellow;
+  height: 30%;
+}
+
+.france {
+  background-color: white;
+  color: black;
+  width: 700px;
+  height: 400px;
+  position:relative
+}
+
+.child-1 {
+  background-color: red;
+  position: absolute;
+  width: 33%;
+  height: 88%;
+}
+
+.child-2 {
+  background-color: white;
+  position: absolute;
+  width: 33%;
+  height: 88%;
+  left: 232px;
+}
+
+.child-3 {
+  background-color: blue;
+  position: absolute;
+  width: 33%;
+  height: 88%;
+  left: 465px;
+}
+
+.germany:hover .color-black{ background-color: red; }
+.germany:hover .color-red{ background-color: white; }
+.germany:hover .color-yellow{ background-color: green; }
+
+.france:active .child-1 {background-color: green }
+.france:active .child-3 {background-color: orange }
