@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
+$font-nav:"Special Elite", sans-serif;
+
 nav {
     background-color:#3C3E42;
     color:#EEAB11;
@@ -11,7 +13,7 @@ ul {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-    font-family: Special Elite;
+    font-family: $font-nav;
 }
 
 img {width: 100%;}
