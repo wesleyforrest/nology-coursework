@@ -1,18 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
-nav {
+.navigation {
   background-color: #3C3E42;
   color: #EEAB11;
   height: 50px;
   padding: 10px;
 }
-
-ul {
+.navigation .navigation-menu {
   list-style-type: none;
   display: flex;
   justify-content: space-around;
   font-family: "Special Elite", sans-serif;
 }
 
-img {
+.home {
+  background-image: url(images/_116512146_shutterstock_editorial_11592748a.jpg);
   width: 100%;
+  height: auto;
 }

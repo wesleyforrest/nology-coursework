@@ -2,18 +2,23 @@
 
 $font-nav:"Special Elite", sans-serif;
 
-nav {
+.navigation {
     background-color:#3C3E42;
     color:#EEAB11;
     height: 50px;
     padding: 10px;
-}
 
-ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    font-family: $font-nav;
-}
+        .navigation-menu {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            font-family: $font-nav;
 
-img {width: 100%;}
+        }
+    }
+
+.home {
+    background-image: url(images/_116512146_shutterstock_editorial_11592748a.jpg);
+    width: 100%;
+    height: auto;
+}
