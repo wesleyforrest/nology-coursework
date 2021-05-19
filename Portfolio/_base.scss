@@ -2,10 +2,6 @@
 
 $font-nav:"Special Elite", sans-serif;
 
-
-
-
-
 #home {
     position: relative;
     left: 40px;
@@ -15,4 +11,6 @@ $font-nav:"Special Elite", sans-serif;
 
 .yacht {
     background-image: url(images/_116512146_shutterstock_editorial_11592748a.jpg);
+    background-repeat: repeat-x;
+    background-size: 100%;
 }

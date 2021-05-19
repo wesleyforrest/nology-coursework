@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+#home {
+  position: relative;
+  left: 40px;
+  top: 30px;
+  font-family: "Special Elite", sans-serif;
+}
+
+.yacht {
+  background-image: url(images/_116512146_shutterstock_editorial_11592748a.jpg);
+  background-repeat: repeat-x;
+  background-size: 100%;
+}
+
 .navigation {
   background-color: #3C3E42;
   height: 50px;
@@ -22,15 +35,4 @@ a:visited {
 
 a:hover {
   color: #86E659;
-}
-
-#home {
-  position: relative;
-  left: 40px;
-  top: 30px;
-  font-family: "Special Elite", sans-serif;
-}
-
-.yacht {
-  background-image: url(images/_116512146_shutterstock_editorial_11592748a.jpg);
 }
