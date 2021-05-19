@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 .navigation {
   background-color: #3C3E42;
-  color: #EEAB11;
   height: 50px;
   padding: 10px;
 }
@@ -10,6 +9,19 @@
   display: flex;
   justify-content: space-around;
   font-family: "Special Elite", sans-serif;
+  color: #EEAB11;
+}
+
+a:link {
+  color: #EEAB11;
+}
+
+a:visited {
+  color: gray;
+}
+
+a:hover {
+  color: #86E659;
 }
 
 .yacht {
