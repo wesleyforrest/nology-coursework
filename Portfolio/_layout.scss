@@ -11,9 +11,18 @@
         }
     }
 
-.about {
-    padding: 20px;
-    color: royalblue;
-    right: 20px;
-    top: 40px;
+.section {
+    color: magenta;
+    height: 3000px;
+
+
+    .section-about {
+        position: relative;
+        padding: 20px;
+        color: royalblue;
+        right: 20px;
+        top: 700px;
+        border: solid white 5px;
     }
+
+}

@@ -24,11 +24,17 @@
   font-family: "Special Elite", sans-serif;
 }
 
-.about {
+.section {
+  color: magenta;
+  height: 3000px;
+}
+.section .section-about {
+  position: relative;
   padding: 20px;
   color: royalblue;
   right: 20px;
-  top: 40px;
+  top: 700px;
+  border: solid white 5px;
 }
 
 #nav-link a:link {
