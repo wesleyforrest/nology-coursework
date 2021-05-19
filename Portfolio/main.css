@@ -22,15 +22,21 @@
   display: flex;
   justify-content: space-around;
   font-family: "Special Elite", sans-serif;
-  color: #EEAB11;
 }
 
-a:link {
+.about {
+  padding: 20px;
+  color: royalblue;
+  right: 20px;
+  top: 40px;
+}
+
+#nav-link a:link {
   color: #EEAB11;
 }
 
 a:visited {
-  color: gray;
+  color: pink;
 }
 
 a:hover {
