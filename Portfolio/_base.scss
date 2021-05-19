@@ -2,32 +2,16 @@
 
 $font-nav:"Special Elite", sans-serif;
 
-.navigation {
-    background-color:#3C3E42;
-    height: 50px;
-    padding: 10px;
 
-        .navigation-menu {
-            list-style-type: none;
-            display: flex;
-            justify-content: space-around;
-            font-family: $font-nav;
-            color: #EEAB11;
 
-        }
-    }
 
-    a:link {
-        color: #EEAB11;
-    }
 
-    a:visited {
-        color: gray;
-    }
-
-    a:hover {
-        color: #86E659 ;
-    }
+#home {
+    position: relative;
+    left: 40px;
+    top: 30px;
+    font-family: $font-nav;
+}
 
 .yacht {
     background-image: url(images/_116512146_shutterstock_editorial_11592748a.jpg);

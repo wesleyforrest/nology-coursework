@@ -24,6 +24,13 @@ a:hover {
   color: #86E659;
 }
 
+#home {
+  position: relative;
+  left: 40px;
+  top: 30px;
+  font-family: "Special Elite", sans-serif;
+}
+
 .yacht {
   background-image: url(images/_116512146_shutterstock_editorial_11592748a.jpg);
 }
