@@ -2,6 +2,21 @@
 
 $font-nav:"Special Elite", sans-serif;
 
+.navigation {
+    background-color:#3C3E42;
+    height: 50px;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+
+        .navigation-menu {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            font-family: $font-nav;
+        }
+    }
+
 #home {
     position: relative;
     left: 40px;
