@@ -19,13 +19,14 @@ $font-nav:"Special Elite", sans-serif;
 
 #home {
     position: relative;
-    left: 40px;
-    top: 30px;
+    left: 60px;
+    top: 90px;
     font-family: $font-nav;
 }
 
-.yacht {
+#yacht {
     background-image: url(images/_116512146_shutterstock_editorial_11592748a.jpg);
     background-repeat: repeat-x;
     background-size: 100%;
+    height: 1100px;
 }
