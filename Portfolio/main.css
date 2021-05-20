@@ -27,6 +27,30 @@
   height: 1100px;
 }
 
+#chess {
+  background-image: url(images/Tatiana-Kosintseva.jpg);
+}
+
+#chimp {
+  background-image: url(images/Unknown.jpeg);
+}
+
+#hockey {
+  background-image: url(images/female-hockey-players-in-action-on-an-astro-turf-pitch-C7FM19.jpg);
+}
+
+#penguin {
+  background-image: url(images/_111925035_penguino.jpg);
+}
+
+#generic1 {
+  background-image: url(images/01_BizarreStockPhotos__FrogDog_shutterstock_260998508.jpg);
+}
+
+#generic2 {
+  background-image: url(images/images.jpeg);
+}
+
 .about {
   font-family: "Special Elite", sans-serif;
   position: relative;
