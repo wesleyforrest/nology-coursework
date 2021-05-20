@@ -28,7 +28,7 @@
 }
 
 #chess {
-  background-image: url(images/Tatiana-Kosintseva.jpg);
+  background-image: url(images/18kasparov-music-1-mediumSquareAt3X.jpg);
 }
 
 #chimp {
@@ -94,6 +94,7 @@
   height: 400px;
   border: 5px solid chartreuse;
   text-align: center;
+  color: white;
 }
 
 #nav-link a:link {
