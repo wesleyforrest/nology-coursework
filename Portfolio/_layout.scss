@@ -49,3 +49,42 @@
         color: white;
     }
 }
+
+.contact {
+    font-family: $font-nav;
+    padding: 30px;
+}
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    padding: 50PX;
+    width: 100%;
+    height: 800px;
+    
+    .contact-form {
+        margin: 40px;
+        height: 400px;
+        width: 550px;
+        border: 5px solid greenyellow;
+        
+        .form {
+        height: 390px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #55a5f0;
+    }
+    }
+
+    .contact-panda {
+        margin: 40px;
+        height: 400px;
+        width: 550px;
+        border: 5px solid greenyellow;
+        
+    }
+}
