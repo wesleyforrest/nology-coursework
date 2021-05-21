@@ -46,27 +46,27 @@ h2 {
 }
 
 #chess {
-  background-image: url(images/18kasparov-music-1-mediumSquareAt3X.jpg);
+  background-image: url(images/kasparov.jpg);
 }
 
 #chimp {
-  background-image: url(images/Unknown.jpeg);
+  background-image: url(images/Chimp.jpeg);
 }
 
 #hockey {
-  background-image: url(images/female-hockey-players-in-action-on-an-astro-turf-pitch-C7FM19.jpg);
+  background-image: url(images/Hockey.jpg);
 }
 
 #penguin {
-  background-image: url(images/_111925035_penguino.jpg);
+  background-image: url(images/Penguin.jpg);
 }
 
 #generic1 {
-  background-image: url(images/01_BizarreStockPhotos__FrogDog_shutterstock_260998508.jpg);
+  background-image: url(images/Dog.jpg);
 }
 
 #generic2 {
-  background-image: url(images/images.jpeg);
+  background-image: url(images/Hippo.jpeg);
 }
 
 .button {
