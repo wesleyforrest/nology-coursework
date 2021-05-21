@@ -35,13 +35,17 @@ $font-nav:"Special Elite", sans-serif;
     background-color: #3C3E42;
     height: 50px;
     padding: 10px;
-    position: fixed;
     width: 100%;
 
     .footer-list {
+    color: #EEAB11;
     list-style-type: none;
     display: flex;
     justify-content: space-around;
     font-family: $font-nav;
 }
 }
+
+h1 {color: $font-main;}
+
+p {color: $font-text}

@@ -1,9 +1,12 @@
-#nav-link a:link {
+a:link {
     color: #EEAB11;
 }
 a:visited {
-    color: pink;
+    color: slategray;
 }
 a:hover {
     color:#86E659 ;
 }
+
+$font-main: color #EEAB11;
+$font-text: color #3C3E42;
