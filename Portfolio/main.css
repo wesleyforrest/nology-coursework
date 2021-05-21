@@ -41,6 +41,10 @@
   font-family: "Special Elite", sans-serif;
 }
 
+h2 {
+  color: #EEAB11;
+}
+
 #chess {
   background-image: url(images/18kasparov-music-1-mediumSquareAt3X.jpg);
 }
@@ -69,7 +73,6 @@
   font-family: "Special Elite", sans-serif;
   position: relative;
   padding: 30px;
-  color: royalblue;
   right: 20px;
   border: solid white 5px;
 }
@@ -87,6 +90,8 @@
   height: 200px;
   border: 5px solid chartreuse;
   text-align: center;
+  background-color: #3C3E42;
+  color: #EEAB11;
 }
 
 .projects {
@@ -147,14 +152,18 @@
   border: 5px solid greenyellow;
 }
 
-#nav-link a:link {
+a:link {
   color: #EEAB11;
 }
 
 a:visited {
-  color: pink;
+  color: slategray;
 }
 
 a:hover {
   color: #86E659;
+}
+
+#color {
+  color: black;
 }
