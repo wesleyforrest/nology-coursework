@@ -1,0 +1,13 @@
+.btn-sec {
+  display: grid;
+  grid-template-columns: "button button button";
+}
+
+.button {
+  display: grid;
+  grid-area: button;
+}
+
+header {
+  color: aquamarine;
+}
