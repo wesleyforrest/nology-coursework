@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Interactivity Challenge</title>
+    <style>
+      form * {
+        display: block;
+        margin: 10px;
+      }
+
+      input {
+        border: 1px solid lightgray;
+        padding: 5px 10px;
+        margin: 5px;
+      }
+
+      ul {
+        width: fit-content;
+        margin: auto;
+        text-align: left;
+      }
+
+      .valid {
+        border: 1px solid green;
+      }
+
+      .invalid {
+        border: 1px solid red;
+      }
+
+      .error-message {
+        color: red;
+      }
+
+      .show {
+        display: block !important;
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">Web Form</h1>
+      <h2 id="desc">Please complete all the required elements of this form</h2>
+      <h3 id="required">* denotes requred field</h3>
+    </header>
+    <section id="sec">
+      <form id="form">
+        <label>Name</label>
+        <input class="input" />
+        <p class="error-message">This field is mandatory</p>
+        <label>Email Address</label>
+        <input class="input" />
+        <p class="error-message">This field is mandatory</p>
+        <button class="btn">Click here to submit form</button>
+      </form>
+    </section>
+
+    <script>
+      let formInputs = document.querySelectorAll(".form-input");
+
+      const handleRegister = (event) => {
+        event.preventDefault();
+        const errorMessage = document.getElementsByClassName("error");
+        if (formInputs[0].value && formInputs[1].value) {
+          errorMessage.classList.remove("show");
+          alert("You have registered");
+        } else {
+          errorMessage.classList.add("show");
+        }
+      };
+      formInputs[(0, 1)].addEventListener("input", (event) => {
+        let inputValue = event.target.value;
+
+        if (inputValue != undefined && inputValue.length > 0) {
+          event.target.classList.remove("error");
+        } else {
+          event.target.classList.add("error");
+        }
+      });
+    </script>
+  </body>
+</html>
