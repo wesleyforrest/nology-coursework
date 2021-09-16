@@ -7,18 +7,26 @@ header {
 }
 
 body {
-  margin: 0;
+  margin: 10;
   padding: 0;
   background: linear-gradient(to right, orange, grey);
 }
 
 #calculator {
+  margin: 10px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  border: solid black;
+  padding: 20px;
 }
 
 #display {
-  padding: 20px;
+  display: grid;
   text-align: right;
   border: solid black;
+  padding: 10px;
 }
 
 .btn-sec {
@@ -27,13 +35,12 @@ body {
   align-items: center;
   min-height: 100vh;
   grid-template-columns: repeat(4, 100px);
-
-  border: solid black;
 }
 
 button {
   padding: 10px;
   font-size: 12px;
+  border-radius: 15px;
 }
 
 .btn-dbl {
