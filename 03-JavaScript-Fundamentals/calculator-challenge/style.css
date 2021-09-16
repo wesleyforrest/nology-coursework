@@ -9,24 +9,32 @@ header {
 body {
   margin: 10;
   padding: 0;
-  background: linear-gradient(to right, orange, grey);
+  background: linear-gradient(to right, grey, orange, grey);
 }
 
 #calculator {
-  margin: 10px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 20px;
   display: grid;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 420px;
+  height: 620px;
   border: solid black;
   padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(to right, lime, black, lime);
 }
 
 #display {
   display: grid;
+  margin-top: 20px;
   text-align: right;
   border: solid black;
   padding: 10px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .btn-sec {
