@@ -1,13 +1,41 @@
-.btn-sec {
-  display: grid;
-  grid-template-columns: "button button button";
-}
-
-.button {
-  display: grid;
-  grid-area: button;
+* {
 }
 
 header {
   color: aquamarine;
+  padding: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, orange, grey);
+}
+
+#calculator {
+}
+
+#display {
+  padding: 20px;
+  text-align: right;
+  border: solid black;
+}
+
+.btn-sec {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+
+  border: solid black;
+}
+
+button {
+  padding: 10px;
+  font-size: 12px;
+}
+
+.btn-dbl {
+  grid-column: span 2;
 }
