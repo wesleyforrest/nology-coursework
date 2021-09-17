@@ -30,6 +30,7 @@ body {
 #display {
   display: grid;
   margin-top: 20px;
+  margin-bottom: 20px;
   text-align: right;
   border: solid black;
   padding: 10px;
@@ -40,8 +41,7 @@ body {
 .btn-sec {
   display: grid;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  min-height: 70vh;
   grid-template-columns: repeat(4, 100px);
 }
 
@@ -54,4 +54,8 @@ button {
 
 .btn-dbl {
   grid-column: span 2;
+}
+
+button:hover {
+  background-color: silver;
 }
