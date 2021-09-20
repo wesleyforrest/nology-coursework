@@ -50,6 +50,7 @@ button {
   font-size: 12px;
   border-radius: 15px;
   cursor: pointer;
+  background-color: #cfad6c;
 }
 
 .btn-dbl {
