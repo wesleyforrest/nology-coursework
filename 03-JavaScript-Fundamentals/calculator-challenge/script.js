@@ -1,25 +1,7 @@
 function getOutput(value) {
   return (document.getElementById("output-value").innerText = value);
 }
-/*
-function printOutput(num) {
-  if (num == "") {
-    document.getElementById("output-value").innerText = num;
-  } else {
-    document.getElementById("output-value").innerText = getFormattedNumber(num);
-  }
-}
 
-function getFormattedNumber(num) {
-  let n = Number(num);
-  let value = n.toLocaleString("en");
-  return value;
-}
-
-function reverseNumberFormat(num) {
-  return Number(num.replace(/,/g, ""));
-}
-*/
 let initialValue = "";
 let oper = "";
 let storedValue = "";
@@ -67,6 +49,26 @@ sum.addEventListener("click", function () {
 });
 
 /*
+function printOutput(num) {
+  if (num == "") {
+    document.getElementById("output-value").innerText = num;
+  } else {
+    document.getElementById("output-value").innerText = getFormattedNumber(num);
+  }
+}
+
+function getFormattedNumber(num) {
+  let n = Number(num);
+  let value = n.toLocaleString("en");
+  return value;
+}
+
+function reverseNumberFormat(num) {
+  return Number(num.replace(/,/g, ""));
+}
+*/
+
+/*
 sum.addEventListener("click", () => {
   let answer;
 
@@ -100,5 +102,25 @@ if (operator == "+") {
   answer = firstNumber * secondNumber;
 } else {
   answer = firstNumber / secondNumber;
+}
+*/
+
+/*
+function printOutput(num) {
+  if (num == "") {
+    document.getElementById("output-value").innerText = num;
+  } else {
+    document.getElementById("output-value").innerText = getFormattedNumber(num);
+  }
+}
+
+function getFormattedNumber(num) {
+  let n = Number(num);
+  let value = n.toLocaleString("en");
+  return value;
+}
+
+function reverseNumberFormat(num) {
+  return Number(num.replace(/,/g, ""));
 }
 */
