@@ -1,6 +1,7 @@
-function getOutput() {
-  return document.getElementById("output-value").innerText;
+function getOutput(value) {
+  return (document.getElementById("output-value").innerText = value);
 }
+/*
 function printOutput(num) {
   if (num == "") {
     document.getElementById("output-value").innerText = num;
@@ -18,20 +19,52 @@ function getFormattedNumber(num) {
 function reverseNumberFormat(num) {
   return Number(num.replace(/,/g, ""));
 }
+*/
+let initialValue = "";
+let oper = "";
+let storedValue = "";
 
 let operator = document.getElementsByClassName("operator");
 for (let i = 0; i < operator.length; i++) {
   operator[i].addEventListener("click", function () {
-    alert("the operator clicked:" + this.id);
+    oper = operator[i].innerText;
+    getOutput(oper);
+    storedValue = initialValue;
+    initialValue = "";
   });
 }
 
 let number = document.getElementsByClassName("number");
 for (let i = 0; i < number.length; i++) {
-  operator[i].addEventListener("click", function () {
-    alert("the number clicked:" + this.id);
+  number[i].addEventListener("click", function () {
+    initialValue = number[i].innerText;
+    getOutput(initialValue);
   });
 }
+let sum = document.querySelector(".equals");
+sum.addEventListener("click", function () {
+  let answer;
+  console.log(initialValue, storedValue);
+  switch (oper) {
+    case "+":
+      answer = parseFloat(storedValue) + parseFloat(initialValue);
+      getOutput(answer);
+      break;
+    case "-":
+      answer = parseFloat(storedValue) - parseFloat(initialValue);
+      getOutput(answer);
+      break;
+    case "X":
+      answer = parseFloat(storedValue) * parseFloat(initialValue);
+      getOutput(answer);
+      break;
+
+    case "/":
+      answer = parseFloat(storedValue) / parseFloat(initialValue);
+      getOutput(answer);
+      break;
+  }
+});
 
 /*
 sum.addEventListener("click", () => {
