@@ -1,40 +1,39 @@
-const number = document.queryCommandValue(".number");
-const operator = document.querySelectorAll(".operator");
-
-let initialValue = "";
-let oper = "";
-let storedNumber = 0;
-
-function displayOutput(value) {
-  return (document.querySelector("#output-value").innerText = value);
+function getOutput() {
+  return document.getElementById("output-value").innerText;
+}
+function printOutput(num) {
+  if (num == "") {
+    document.getElementById("output-value").innerText = num;
+  } else {
+    document.getElementById("output-value").innerText = getFormattedNumber(num);
+  }
 }
 
-/*
 function getFormattedNumber(num) {
   let n = Number(num);
   let value = n.toLocaleString("en");
   return value;
 }
+
 function reverseNumberFormat(num) {
-  return number(num.replace(/,/g, ""));
-}
-*/
-
-for (let i = 0; i < number.length; i++) {
-  number[i].addEventListener("click", (event) => {
-    initialValue = event.target.innerText;
-    displayOutput.innerText = initialValue;
-  });
+  return Number(num.replace(/,/g, ""));
 }
 
+let operator = document.getElementsByClassName("operator");
 for (let i = 0; i < operator.length; i++) {
-  operator[i].addEventListener("click", function (event) {
-    storedNumber = initialValue;
-    operatorValue = event.target.innerText;
-    displayOutput.innerText = "";
+  operator[i].addEventListener("click", function () {
+    alert("the operator clicked:" + this.id);
   });
 }
 
+let number = document.getElementsByClassName("number");
+for (let i = 0; i < number.length; i++) {
+  operator[i].addEventListener("click", function () {
+    alert("the number clicked:" + this.id);
+  });
+}
+
+/*
 sum.addEventListener("click", () => {
   let answer;
 
