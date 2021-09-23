@@ -50,7 +50,7 @@ button {
   font-size: 12px;
   border-radius: 15px;
   cursor: pointer;
-  background-color: #cfad6c;
+  background: linear-gradient(to right, #cfad6c, #b4b8c5);
 }
 
 .btn-dbl {

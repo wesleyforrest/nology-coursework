@@ -1,13 +1,15 @@
-function getOutput() {
-  return document.getElementById("output-value").innerText;
+const number = document.queryCommandValue(".number");
+const operator = document.querySelectorAll(".operator");
+
+let initialValue = "";
+let oper = "";
+let storedNumber = 0;
+
+function displayOutput(value) {
+  return (document.querySelector("#output-value").innerText = value);
 }
-function printOutput(num) {
-  if (num == "") {
-    document.getElementById("output-value").innerText = num;
-  } else {
-    document.getElementById("output-value").innerText = getFormattedNumber(num);
-  }
-}
+
+/*
 function getFormattedNumber(num) {
   let n = Number(num);
   let value = n.toLocaleString("en");
@@ -16,51 +18,30 @@ function getFormattedNumber(num) {
 function reverseNumberFormat(num) {
   return number(num.replace(/,/g, ""));
 }
-let initialValue = "";
-let number = document.getElementsByClassName("number");
+*/
+
 for (let i = 0; i < number.length; i++) {
-  number[i].addEventListener("click", function () {
-    let initialValue = parseFloat(number[i].innerText);
-    console.log(initialValue);
-    document.querySelector("#output-value").innerText = initialValue;
-    /*let output = reverseNumberFormat(getOutput());
-    if (output != NaN) {
-      output = output + this.id;
-      printOutput(output);
-    }
-    */
-    return initialValue;
+  number[i].addEventListener("click", (event) => {
+    initialValue = event.target.innerText;
+    displayOutput.innerText = initialValue;
   });
 }
-console.log(initialValue);
 
-const operator = document.getElementsByClassName("operator");
-console.log(operator);
 for (let i = 0; i < operator.length; i++) {
-  operator[i].addEventListener("click", function (initialValue) {
-    let operatorValue = operator[i].innerText;
-    console.log(operatorValue);
-    console.log(initialValue);
-    let storeNumber = 0;
-    initialValue = storeNumber;
-    console.log(storeNumber);
-    initialValue = "";
+  operator[i].addEventListener("click", function (event) {
+    storedNumber = initialValue;
+    operatorValue = event.target.innerText;
+    displayOutput.innerText = "";
   });
 }
 
-//const operator = ["+", "-", "*", "/"];
-const digit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-const firstNumber = parseFloat("");
-const secondNumber = parseFloat("");
-
-const sum = document.querySelector(".equals");
 sum.addEventListener("click", () => {
   let answer;
 
   switch (operatorValue) {
     case "+":
-      answer = initialValue + secondNumber;
-      document.querySelector("#output-value").innerText = answer;
+      answer = parseFloat(storedNumber) + parseFloat(initialValue);
+      displayOutput.innerText = answer;
       break;
     case "-":
       answer = initialValue - secondNumber;
@@ -77,3 +58,15 @@ sum.addEventListener("click", () => {
       break;
   }
 });
+
+/*
+if (operator == "+") {
+  answer = firstNumber + secondNumber;
+} else if (operator == "-") {
+  answer = firstNumber - secondNumber;
+} else if (operator == "*") {
+  answer = firstNumber * secondNumber;
+} else {
+  answer = firstNumber / secondNumber;
+}
+*/
