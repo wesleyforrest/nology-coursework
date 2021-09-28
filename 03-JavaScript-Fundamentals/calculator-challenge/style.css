@@ -20,7 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 420px;
-  height: 720px;
+  height: auto;
   border: solid black;
   padding: 20px;
   border-radius: 20px;
