@@ -4,6 +4,7 @@ let number = document.getElementsByClassName("number");
 const calcOutput = document.querySelector("#output-value");
 const sum = document.querySelector(".equals");
 const clear = document.querySelector(".clear");
+const del = document.querySelector(".del");
 const decimal = document.querySelector(".decimal");
 
 let leftNumber = "";
@@ -75,6 +76,16 @@ clear.addEventListener("click", () => {
   leftNumber = "";
   rightNumber = "";
   oper = "";
+});
+
+del.addEventListener("click", () => {
+  if (leftNumber > "") {
+    leftNumber = leftNumber.slice(0, -1);
+  } else if (rightNumber > "") {
+    rightNumber = rightNumber.slice(0, -1);
+  } else {
+    displayOutput;
+  }
 });
 
 decimal.addEventListener("click", () => {
