@@ -81,8 +81,10 @@ clear.addEventListener("click", () => {
 del.addEventListener("click", () => {
   if (leftNumber > "") {
     leftNumber = leftNumber.slice(0, -1);
+    displayOutput(leftNumber);
   } else if (rightNumber > "") {
     rightNumber = rightNumber.slice(0, -1);
+    displayOutput(rightNumber);
   } else {
     displayOutput;
   }
