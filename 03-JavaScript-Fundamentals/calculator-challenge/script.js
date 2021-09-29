@@ -1,126 +1,88 @@
-function getOutput(value) {
-  return (document.getElementById("output-value").innerText = value);
+// We're gonna make the apple iphone calculator.. Namely there's a leftNumber, an operator, and a rightNumber.
+// ie. You can't do 2+2+2 .. because there's multiple opeartors and more than a left & right number
+let number = document.getElementsByClassName("number");
+const calcOutput = document.querySelector("#output-value");
+const sum = document.querySelector(".equals");
+const clear = document.querySelector(".clear");
+const decimal = document.querySelector(".decimal");
+
+let leftNumber = "";
+let rightNumber = "";
+let storedNumber = "";
+let decimalClick = false;
+
+// 1. Numbers Click Event Handler - On the first click event, populate the leftNumber.
+//    .. Append any extra clicks to the leftNumber UNTIL YOU CLICK AN OPERATOR
+//    .. THEN! you can now populate the right number because the operator has been clicked
+
+// 2. Operators Click Event handler - In a seperate event handler for the "operators", populate the operator
+//    Note: If leftNumber and rightNumber are set, then we don't want to set the operator, we want to EVALUATE it (apple iphone logic you see)
+
+// 3. Equals Click Event handler - evaluate the left and right number with whatever operator was clicked. Then display this to the user
+
+// Challenge #1 - Create a calculator "VISUALLY". In each of the three event handlers above, capture what was clicked, and log it the console
+function displayOutput(value) {
+  calcOutput.innerText = value;
 }
 
-let initialValue = "";
-let oper = "";
-let storedValue = "";
+for (let i = 0; i < number.length; i++) {
+  number[i].addEventListener("click", () => {
+    if (leftNumber) {
+      leftNumber = leftNumber + number[i].innerText;
+    } else {
+      leftNumber = number[i].innerText;
+    }
+    displayOutput(leftNumber);
+  });
+}
 
 let operator = document.getElementsByClassName("operator");
 for (let i = 0; i < operator.length; i++) {
-  operator[i].addEventListener("click", function () {
+  operator[i].addEventListener("click", () => {
     oper = operator[i].innerText;
-    getOutput(oper);
-    storedValue = initialValue;
-    initialValue = "";
+    displayOutput(oper);
+    rightNumber = leftNumber;
+    displayOutput(rightNumber);
+    leftNumber = "";
+    console.log(rightNumber, leftNumber);
   });
 }
 
-let number = document.getElementsByClassName("number");
-for (let i = 0; i < number.length; i++) {
-  number[i].addEventListener("click", function () {
-    initialValue = number[i].innerText;
-    getOutput(initialValue);
-  });
-}
-let sum = document.querySelector(".equals");
-sum.addEventListener("click", function () {
-  let answer;
-  console.log(initialValue, storedValue);
-  switch (oper) {
-    case "+":
-      answer = parseFloat(storedValue) + parseFloat(initialValue);
-      getOutput(answer);
-      break;
-    case "-":
-      answer = parseFloat(storedValue) - parseFloat(initialValue);
-      getOutput(answer);
-      break;
-    case "X":
-      answer = parseFloat(storedValue) * parseFloat(initialValue);
-      getOutput(answer);
-      break;
-
-    case "/":
-      answer = parseFloat(storedValue) / parseFloat(initialValue);
-      getOutput(answer);
-      break;
-  }
-});
-
-/*
-function printOutput(num) {
-  if (num == "") {
-    document.getElementById("output-value").innerText = num;
-  } else {
-    document.getElementById("output-value").innerText = getFormattedNumber(num);
-  }
-}
-
-function getFormattedNumber(num) {
-  let n = Number(num);
-  let value = n.toLocaleString("en");
-  return value;
-}
-
-function reverseNumberFormat(num) {
-  return Number(num.replace(/,/g, ""));
-}
-*/
-
-/*
 sum.addEventListener("click", () => {
   let answer;
-
-  switch (operatorValue) {
+  switch (oper) {
     case "+":
-      answer = parseFloat(storedNumber) + parseFloat(initialValue);
-      displayOutput.innerText = answer;
+      answer = parseFloat(rightNumber) + parseFloat(leftNumber);
+      displayOutput(answer);
       break;
     case "-":
-      answer = initialValue - secondNumber;
-      document.querySelector("#output-value").innerText.answer;
+      answer = parseFloat(rightNumber) - parseFloat(leftNumber);
+      displayOutput(answer);
       break;
-    case "*":
-      answer = initialValue * secondNumber;
-      document.querySelector("#output-value").innerText.answer;
-      break;
-
     case "/":
-      answer = initialValue / secondNumber;
-      document.querySelector("#output-value").innerText.answer;
+      answer = parseFloat(rightNumber) / parseFloat(leftNumber);
+      displayOutput(answer);
+      break;
+    case "X":
+      answer = parseFloat(rightNumber) * parseFloat(leftNumber);
+      displayOutput(answer);
       break;
   }
 });
 
-/*
-if (operator == "+") {
-  answer = firstNumber + secondNumber;
-} else if (operator == "-") {
-  answer = firstNumber - secondNumber;
-} else if (operator == "*") {
-  answer = firstNumber * secondNumber;
-} else {
-  answer = firstNumber / secondNumber;
-}
-*/
+clear.addEventListener("click", () => {
+  displayOutput("");
+  leftNumber = "";
+  rightNumber = "";
+  oper = "";
+});
 
-/*
-function printOutput(num) {
-  if (num == "") {
-    document.getElementById("output-value").innerText = num;
+decimal.addEventListener("click", () => {
+  decimalClick = true;
+  if (decimalClick) {
+    leftNumber = leftNumber + ".";
+    displayOutput(leftNumber);
   } else {
-    document.getElementById("output-value").innerText = getFormattedNumber(num);
+    leftNumber;
   }
-}
-
-function getFormattedNumber(num) {
-  let n = Number(num);
-  let value = n.toLocaleString("en");
-  return value;
-}
-
-function reverseNumberFormat(num) {
-  return Number(num.replace(/,/g, ""));
-}
-*/
+});
