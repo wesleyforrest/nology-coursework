@@ -40,3 +40,22 @@ for (let i = 0; i < 10; i++) {
 // console.log(person.firstName + " " + person.lastName);
 
 // console.log(person.getFullName());
+
+//CLASS SYNTAX
+
+//PascalClass - Naming convention for classes
+class ExampleClass {
+  constructor(firstName, lastName, age) {
+    (this.firstName = firstName), (this.lastName = lastName), (this.age = age);
+  }
+
+  greet() {
+    return `Hi my name is ${this.firstName} ${this.lastName}`;
+  }
+}
+
+const exampleOne = new ExampleClass("Charlie", "Richardson", 30);
+const exampleTwo = new ExampleClass("John", "Smith", 27);
+
+console.log(exampleOne.greet());
+console.log(exampleTwo.greet());
