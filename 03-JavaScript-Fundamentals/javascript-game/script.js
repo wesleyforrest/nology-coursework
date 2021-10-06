@@ -1,1 +1,1 @@
-const monkey = document.
+const monkey = document.createAttribute("#monkey");
