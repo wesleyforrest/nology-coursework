@@ -1,15 +1,17 @@
 const computerChoiceDisplay = document.getElementById("computer-choice");
 const playerChoiceDisplay = document.getElementById("player-choice");
-const resultDisplayDisplay = document.getElementById("result");
+const resultDisplay = document.getElementById("result");
 const possibleChoices = document.querySelectorAll("button");
 let playerChoice;
-const randomNumber = Math.random() * possibleChoices.length;
+let result;
+//const randomNumber = Math.random() * possibleChoices.length;
 
 possibleChoices.forEach((possibleChoices) =>
   possibleChoices.addEventListener("click", (event) => {
     playerChoice = event.target.id;
     playerChoiceDisplay.innerHTML = playerChoice;
     generateComputerChoice();
+    getResult();
   })
 );
 
@@ -17,13 +19,38 @@ function generateComputerChoice() {
   const randomNumber = Math.floor(Math.random() * possibleChoices.length);
 
   if (randomNumber === 1) {
-    computerChoice = "rock";
+    computerChoice = "Rock";
   }
   if (randomNumber === 2) {
-    computerChoice = "scissors";
+    computerChoice = "Scissors";
   }
   if (randomNumber === 3) {
-    computerChoice = "paper";
+    computerChoice = "Paper";
   }
   computerChoiceDisplay.innerHTML = computerChoice;
+}
+
+function getResult() {
+  if (computerChoice === playerChoice) {
+    result = "It's a Draw!";
+  }
+  if (computerChoice === "Rock" && playerChoice === "Paper") {
+    result = "Player Wins!";
+  }
+  if (computerChoice === "Rock" && playerChoice === "Scissors") {
+    result = "Player loses!";
+  }
+  if (computerChoice === "Paper" && playerChoice === "Scissors") {
+    result = "Player Wins!";
+  }
+  if (computerChoice === "Paper" && playerChoice === "Rock") {
+    result = "Player loses!";
+  }
+  if (computerChoice === "Scissors" && playerChoice === "Rock") {
+    result = "Player Wins!";
+  }
+  if (computerChoice === "Scissors" && playerChoice === "Paper") {
+    result = "Player loses!";
+  }
+  resultDisplay.innerHTML = result;
 }
