@@ -1,0 +1,19 @@
+.btn-choice {
+  text-align: center;
+  width: 200px;
+  height: 70px;
+  background-color: #d3b88c;
+  border-radius: 10px;
+}
+
+header {
+  text-align: center;
+  background-color: #230903;
+  color: #f4f2f3;
+}
+
+body {
+  background-color: #9ebc9f;
+  align-items: center;
+  justify-items: center;
+}
