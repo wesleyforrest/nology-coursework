@@ -11,3 +11,8 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.score-clock {
+  display: inline-flex;
+  flex-direction: row;
+}

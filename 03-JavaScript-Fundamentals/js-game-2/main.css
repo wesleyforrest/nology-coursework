@@ -12,6 +12,16 @@
   margin-right: auto;
 }
 
+.score-clock {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 header {
   text-align: center;
   background-color: #230903;
