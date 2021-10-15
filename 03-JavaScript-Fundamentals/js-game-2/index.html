@@ -24,19 +24,27 @@
   <body>
     <section id="timer"></section>
     <img class="centre" src="images/Screenshot 2021-10-13 at 08.54.48.png" />
+
+    <h2>Lorum Ipsum</h2>
+
     <section class="score-clock">
+      <p id="player-score">Player Score</p>
       <p id="clock">60</p>
       <p id="comp-score">Computer Score</p>
-      <p id="player-score">Player Score</p>
-    </section>
-    <section class="selection">
-      <button class="btn-choice" id="Rock">Rock</button>
-      <button class="btn-choice" id="Paper">Paper</button>
-      <button class="btn-choice" id="Scissors">Scissors</button>
     </section>
 
-    <h2>Computer Choice: <span id="computer-choice"></span></h2>
+    <section class="selection">
+      <img src="images/Rock.png" class="btn-choice rock-image" id="Rock" />
+      <img src="images/Paper.png" class="btn-choice paper-image" id="Paper" />
+      <img
+        src="images/Scissors.png"
+        class="btn-choice scissors-image"
+        id="Scissors"
+      />
+    </section>
+
     <h2>Player Choice: <span id="player-choice"></span></h2>
+    <h2>Computer Choice: <span id="computer-choice"></span></h2>
     <h2>Result: <span id="result"></span></h2>
 
     <script src="script.js"></script>
