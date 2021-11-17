@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 .btn-choice {
   text-align: center;
   width: 200px;
@@ -26,6 +27,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: "Architects Daughter";
+  font-size: 20px;
 }
 
 .counters {
@@ -37,6 +40,23 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#player-score {
+  color: blue;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+#comp-score {
+  color: red;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+#timer {
+  font-size: 50px;
+  color: green;
 }
 
 header {

@@ -6,7 +6,11 @@ var resultDisplay = document.getElementById("result");
 var possibleChoices = document.querySelectorAll(".btn-choice");
 var playerChoice;
 var result;
-var rock = document.getElementById("Rock"); //const randomNumber = Math.random() * possibleChoices.length;
+var rock = document.getElementById("Rock");
+var playerScore = document.getElementById("#player-score");
+var computerScore = document.getElementById("#computer-score");
+var playerCounter = 0;
+var computerCounter = 0; //const randomNumber = Math.random() * possibleChoices.length;
 
 possibleChoices.forEach(function (possibleChoices) {
   return possibleChoices.addEventListener("click", function (event) {
@@ -65,4 +69,12 @@ function getResult() {
   }
 
   resultDisplay.innerHTML = result;
+}
+
+if (result === "Player Wins!") {
+  playerCounter++;
+  playerScore.innerHTML = playerCounter;
+} else if (result === "Player loses!") {
+  computerCounter++;
+  computerScore.innerHTML = computerScore;
 }

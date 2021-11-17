@@ -21,11 +21,29 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: ;
+  font-family: "Architects Daughter";
+  font-size: 20px;
 }
 
 .counters {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+#player-score {
+  color: blue;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+#comp-score {
+  color: red;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+#timer {
+  font-size: 50px;
+  color: green;
 }

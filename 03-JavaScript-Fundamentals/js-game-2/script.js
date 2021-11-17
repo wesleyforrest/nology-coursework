@@ -5,6 +5,10 @@ const possibleChoices = document.querySelectorAll(".btn-choice");
 let playerChoice;
 let result;
 let rock = document.getElementById("Rock");
+let playerScore = document.getElementById("#player-score");
+let computerScore = document.getElementById("#computer-score");
+let playerCounter = 0;
+let computerCounter = 0;
 //const randomNumber = Math.random() * possibleChoices.length;
 
 possibleChoices.forEach((possibleChoices) =>
@@ -54,4 +58,12 @@ function getResult() {
     result = "Player loses!";
   }
   resultDisplay.innerHTML = result;
+}
+
+if (result === "Player Wins!") {
+  playerCounter++;
+  playerScore.innerHTML = playerCounter;
+} else if (result === "Player loses!") {
+  computerCounter++;
+  computerScore.innerHTML = computerScore;
 }
