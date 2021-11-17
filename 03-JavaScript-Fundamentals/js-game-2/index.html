@@ -25,13 +25,20 @@
     <section id="timer"></section>
     <img class="centre" src="images/Screenshot 2021-10-13 at 08.54.48.png" />
 
-    <h2>Lorum Ipsum</h2>
-
     <section class="score-clock">
-      <p id="player-score">Player Score</p>
-      <p id="clock">60</p>
-      <p id="comp-score">Computer Score</p>
+      <div class="headers">
+        <p id="player-header">Player Score</p>
+        <p id="clock-header">Timer</p>
+        <p id="comp-header">Computer Score</p>
+      </div>
+      <div class="counters">
+        <p id="player-score">0</p>
+        <p id="clock-count">60</p>
+        <p id="comp-score">0</p>
+      </div>
     </section>
+
+    <h2>Choose your weopon of choice.......</h2>
 
     <section class="selection">
       <img src="images/Rock.png" class="btn-choice rock-image" id="Rock" />
@@ -43,9 +50,11 @@
       />
     </section>
 
-    <h2>Player Choice: <span id="player-choice"></span></h2>
-    <h2>Computer Choice: <span id="computer-choice"></span></h2>
-    <h2>Result: <span id="result"></span></h2>
+    <section class="plr-choice">
+      <h2>Player Choice: <span id="player-choice"></span></h2>
+      <h2>Computer Choice: <span id="computer-choice"></span></h2>
+      <h2>Result: <span id="result"></span></h2>
+    </section>
 
     <script src="script.js"></script>
   </body>

@@ -6,7 +6,11 @@ const getInputText = () => {
   text.innerHTML = input[0].value + " " + input[1].value;
 };
 
-btn.addEventListener("click", getInputText);
+const changeColour = () => {
+  text.classList.toggle(".red");
+};
+
+btn.addEventListener("click", getInputText, changeColour);
 
 // text.addEventListener("click", () => {
 //   text.innerHTML = "Hello Total Tools";
