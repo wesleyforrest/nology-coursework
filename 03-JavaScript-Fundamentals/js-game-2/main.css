@@ -39,12 +39,6 @@
           align-items: center;
 }
 
-#player-score {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 header {
   text-align: center;
   background-color: #230903;
