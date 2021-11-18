@@ -8,7 +8,7 @@ var playerChoice;
 var result;
 var rock = document.getElementById("Rock");
 var playerScore = document.getElementById("#player-score");
-var computerScore = document.getElementById("#computer-score");
+var computerScore = document.getElementById("#comp-score");
 var playerCounter = 0;
 var computerCounter = 0; //const randomNumber = Math.random() * possibleChoices.length;
 
@@ -77,4 +77,22 @@ if (result === "Player Wins!") {
 } else if (result === "Player loses!") {
   computerCounter++;
   computerScore.innerHTML = computerScore;
+}
+
+var timerClock = document.querySelector("#timer");
+var timeSecond = 90;
+displayTime(timeSecond);
+var countDown = setInterval(function () {
+  timeSecond--;
+  displayTime(timeSecond);
+
+  if (timeSecond <= 0 || timeSecond < 1) {
+    endTime();
+    clearInterval(countDown);
+  }
+}, 1000);
+
+function displayTime(second) {
+  var sec = math.floor(second % 60);
+  timerClock.innerHTML = "".concat(sec);
 }

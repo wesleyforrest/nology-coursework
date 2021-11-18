@@ -6,9 +6,10 @@ let playerChoice;
 let result;
 let rock = document.getElementById("Rock");
 let playerScore = document.getElementById("#player-score");
-let computerScore = document.getElementById("#computer-score");
+let computerScore = document.getElementById("#comp-score");
 let playerCounter = 0;
 let computerCounter = 0;
+
 //const randomNumber = Math.random() * possibleChoices.length;
 
 possibleChoices.forEach((possibleChoices) =>
@@ -66,4 +67,23 @@ if (result === "Player Wins!") {
 } else if (result === "Player loses!") {
   computerCounter++;
   computerScore.innerHTML = computerScore;
+}
+
+const timerClock = document.querySelector("#timer");
+let timeSecond = 90;
+
+displayTime(timeSecond);
+
+const countDown = setInterval(() => {
+  timeSecond--;
+  displayTime(timeSecond);
+  if (timeSecond <= 0 || timeSecond < 1) {
+    endTime();
+    clearInterval(countDown);
+  }
+}, 1000);
+
+function displayTime(second) {
+  const sec = math.floor(second % 60);
+  timerClock.innerHTML = `${sec}`;
 }
