@@ -80,19 +80,14 @@ if (result === "Player Wins!") {
 }
 
 var timerClock = document.querySelector("#timer");
-var timeSecond = 90;
-displayTime(timeSecond);
+var timeSecond = 10;
+timerClock.innerHTML = timeSecond;
 var countDown = setInterval(function () {
   timeSecond--;
-  displayTime(timeSecond);
+  timerClock.innerHTML = timeSecond;
+  console.log(timeSecond);
 
-  if (timeSecond <= 0 || timeSecond < 1) {
-    endTime();
+  if (timeSecond <= 0) {
     clearInterval(countDown);
   }
 }, 1000);
-
-function displayTime(second) {
-  var sec = math.floor(second % 60);
-  timerClock.innerHTML = "".concat(sec);
-}
