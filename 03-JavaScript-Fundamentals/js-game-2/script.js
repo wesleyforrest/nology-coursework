@@ -70,20 +70,15 @@ if (result === "Player Wins!") {
 }
 
 const timerClock = document.querySelector("#timer");
-let timeSecond = 90;
+let timeSecond = 10;
 
-displayTime(timeSecond);
+timerClock.innerHTML = timeSecond;
 
-const countDown = setInterval(() => {
+let countDown = setInterval(() => {
   timeSecond--;
-  displayTime(timeSecond);
-  if (timeSecond <= 0 || timeSecond < 1) {
-    endTime();
+  timerClock.innerHTML = timeSecond;
+  console.log(timeSecond);
+  if (timeSecond <= 0) {
     clearInterval(countDown);
   }
 }, 1000);
-
-function displayTime(second) {
-  const sec = math.floor(second % 60);
-  timerClock.innerHTML = `${sec}`;
-}
