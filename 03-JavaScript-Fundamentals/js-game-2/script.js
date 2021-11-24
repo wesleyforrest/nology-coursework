@@ -3,10 +3,10 @@ const playerChoiceDisplay = document.getElementById("player-choice");
 const resultDisplay = document.getElementById("result");
 const possibleChoices = document.querySelectorAll(".btn-choice");
 let playerChoice;
-let result;
+let result = 0;
 let rock = document.getElementById("Rock");
-let playerScore = document.getElementById("#player-score");
-let computerScore = document.getElementById("#comp-score");
+let playerScore = document.querySelector("#player-score");
+let computerScore = document.querySelector("#comp-score");
 let playerCounter = 0;
 let computerCounter = 0;
 
@@ -61,14 +61,6 @@ function getResult() {
   resultDisplay.innerHTML = result;
 }
 
-if (result === "Player Wins!") {
-  playerCounter++;
-  playerScore.innerHTML = playerCounter;
-} else if (result === "Player loses!") {
-  computerCounter++;
-  computerScore.innerHTML = computerScore;
-}
-
 const timerClock = document.querySelector("#timer");
 let timeSecond = 60;
 
@@ -82,3 +74,15 @@ let countDown = setInterval(() => {
     clearInterval(countDown);
   }
 }, 1000);
+
+//playerScore.innerHTML = "CHEESE";
+
+function scoreCounter() {
+  if (result == "Player Wins!") {
+    playerCounter++;
+    playerScore.innerHTML = playerCounter;
+  } else if (result == "Player loses!") {
+    computerCounter++;
+    computerScore.innerHTML = computerCounter;
+  }
+}

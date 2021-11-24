@@ -5,10 +5,10 @@ var playerChoiceDisplay = document.getElementById("player-choice");
 var resultDisplay = document.getElementById("result");
 var possibleChoices = document.querySelectorAll(".btn-choice");
 var playerChoice;
-var result;
+var result = 0;
 var rock = document.getElementById("Rock");
-var playerScore = document.getElementById("#player-score");
-var computerScore = document.getElementById("#comp-score");
+var playerScore = document.querySelector("#player-score");
+var computerScore = document.querySelector("#comp-score");
 var playerCounter = 0;
 var computerCounter = 0; //const randomNumber = Math.random() * possibleChoices.length;
 
@@ -71,14 +71,6 @@ function getResult() {
   resultDisplay.innerHTML = result;
 }
 
-if (result === "Player Wins!") {
-  playerCounter++;
-  playerScore.innerHTML = playerCounter;
-} else if (result === "Player loses!") {
-  computerCounter++;
-  computerScore.innerHTML = computerScore;
-}
-
 var timerClock = document.querySelector("#timer");
 var timeSecond = 60;
 timerClock.innerHTML = timeSecond;
@@ -90,4 +82,14 @@ var countDown = setInterval(function () {
   if (timeSecond <= 0) {
     clearInterval(countDown);
   }
-}, 1000);
+}, 1000); //playerScore.innerHTML = "CHEESE";
+
+function scoreCounter() {
+  if (result == "Player Wins!") {
+    playerCounter++;
+    playerScore.innerHTML = playerCounter;
+  } else if (result == "Player loses!") {
+    computerCounter++;
+    computerScore.innerHTML = computerCounter;
+  }
+}
