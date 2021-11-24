@@ -9,36 +9,16 @@ body {
   background-color: #9ebc9f;
 }
 
+.clock {
+  margin: auto;
+  width: 15%;
+  text-align: center;
+  border: solid black 5px;
+}
+
 .selection {
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
-}
-
-.rock-image {
-  height: 120px;
-  width: 120px;
-}
-
-.rock-image:hover {
-  cursor: pointer;
-}
-
-.paper-image {
-  height: 120px;
-  width: 120px;
-}
-
-.paper-image:hover {
-  cursor: pointer;
-}
-
-.scissors-image {
-  height: 120px;
-  width: 120px;
-}
-
-.scissors-image:hover {
-  cursor: pointer;
 }

@@ -7,17 +7,6 @@
   border-radius: 10px;
 }
 
-.centre {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.score-clock {
-  border: solid black;
-  border-radius: 5px;
-}
-
 .headers {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,44 +32,33 @@
 }
 
 #player-score {
-  color: blue;
-  font-weight: 400;
-  font-size: 30px;
-}
-
-#comp-score {
+  border: solid red;
+  background-color: blue;
+  border-radius: 5px;
+  padding: 20px;
   color: red;
   font-weight: 400;
   font-size: 30px;
 }
 
+#comp-score {
+  border: solid blue;
+  background-color: red;
+  border-radius: 5px;
+  padding: 20px;
+  color: blue;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+#timer-header {
+  color: magenta;
+  font-size: 40px;
+}
+
 #timer {
   font-size: 50px;
   color: green;
-}
-
-header {
-  text-align: center;
-  background-color: #230903;
-  color: #f4f2f3;
-  text-align: center;
-}
-
-body {
-  background-color: #9ebc9f;
-}
-
-.selection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
 }
 
 .rock-image {
@@ -108,5 +86,36 @@ body {
 
 .scissors-image:hover {
   cursor: pointer;
+}
+
+header {
+  text-align: center;
+  background-color: #230903;
+  color: #f4f2f3;
+  text-align: center;
+}
+
+body {
+  background-color: #9ebc9f;
+}
+
+.clock {
+  margin: auto;
+  width: 15%;
+  text-align: center;
+  border: solid black 5px;
+}
+
+.selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 /*# sourceMappingURL=main.css.map */

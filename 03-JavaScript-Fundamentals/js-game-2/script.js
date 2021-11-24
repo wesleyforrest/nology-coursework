@@ -70,7 +70,7 @@ if (result === "Player Wins!") {
 }
 
 const timerClock = document.querySelector("#timer");
-let timeSecond = 10;
+let timeSecond = 60;
 
 timerClock.innerHTML = timeSecond;
 

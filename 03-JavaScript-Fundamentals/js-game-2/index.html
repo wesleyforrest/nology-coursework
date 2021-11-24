@@ -22,18 +22,20 @@
     <h1>Rock, Paper, Scissors Game</h1>
   </header>
   <body>
-    <section id="time"></section>
-    <img class="centre" src="images/Screenshot 2021-10-13 at 08.54.48.png" />
+    <section class="clock">
+      <p id="timer-header">Timer</p>
+      <p id="timer">60</p>
+    </section>
 
-    <section class="score-clock">
+    <section class="score">
       <div class="headers">
         <p id="player-header">Player Score</p>
-        <p id="clock-header">Timer</p>
+
         <p id="comp-header">Computer Score</p>
       </div>
       <div class="counters">
         <p id="player-score">0</p>
-        <p id="timer">60</p>
+
         <p id="comp-score">0</p>
       </div>
     </section>
@@ -41,10 +43,18 @@
     <h2>Choose your weopon of choice.......</h2>
 
     <section class="selection">
-      <img src="images/Rock.png" class="btn-choice rock-image" id="Rock" />
-      <img src="images/Paper.png" class="btn-choice paper-image" id="Paper" />
       <img
-        src="images/Scissors.png"
+        src="images/Rock colour.png"
+        class="btn-choice rock-image"
+        id="Rock"
+      />
+      <img
+        src="images/Paper-colour.png"
+        class="btn-choice paper-image"
+        id="Paper"
+      />
+      <img
+        src="images/Scissors colour.png"
         class="btn-choice scissors-image"
         id="Scissors"
       />

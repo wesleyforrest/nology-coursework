@@ -80,7 +80,7 @@ if (result === "Player Wins!") {
 }
 
 var timerClock = document.querySelector("#timer");
-var timeSecond = 10;
+var timeSecond = 60;
 timerClock.innerHTML = timeSecond;
 var countDown = setInterval(function () {
   timeSecond--;

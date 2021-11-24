@@ -6,17 +6,6 @@
   border-radius: 10px;
 }
 
-.centre {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.score-clock {
-  border: solid black;
-  border-radius: 5px;
-}
-
 .headers {
   display: flex;
   justify-content: space-around;
@@ -32,18 +21,58 @@
 }
 
 #player-score {
-  color: blue;
-  font-weight: 400;
-  font-size: 30px;
-}
-
-#comp-score {
+  border: solid red;
+  background-color: blue;
+  border-radius: 5px;
+  padding: 20px;
   color: red;
   font-weight: 400;
   font-size: 30px;
 }
 
+#comp-score {
+  border: solid blue;
+  background-color: red;
+  border-radius: 5px;
+  padding: 20px;
+  color: blue;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+#timer-header {
+  color: magenta;
+  font-size: 40px;
+}
+
 #timer {
   font-size: 50px;
   color: green;
+}
+
+.rock-image {
+  height: 120px;
+  width: 120px;
+}
+
+.rock-image:hover {
+  cursor: pointer;
+}
+
+.paper-image {
+  height: 120px;
+  width: 120px;
+}
+
+.paper-image:hover {
+  cursor: pointer;
+}
+
+.scissors-image {
+  height: 120px;
+  width: 120px;
+}
+
+.scissors-image:hover {
+  cursor: pointer;
 }
