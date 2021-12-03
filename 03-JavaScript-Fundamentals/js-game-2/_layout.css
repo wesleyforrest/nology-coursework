@@ -9,12 +9,18 @@ body {
   background-color: #9ebc9f;
 }
 
-.clock {
-  position: relative;
-  margin: auto;
-  width: 15%;
-  text-align: center;
-  border: solid black 5px;
+.headers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Architects Daughter";
+  font-size: 20px;
+}
+
+.counters {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .selection {
@@ -22,4 +28,8 @@ body {
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
+}
+
+.choice {
+  padding: 30px;
 }

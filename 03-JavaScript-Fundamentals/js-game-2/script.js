@@ -1,16 +1,19 @@
 const computerChoiceDisplay = document.getElementById("computer-choice");
 const playerChoiceDisplay = document.getElementById("player-choice");
 const resultDisplay = document.getElementById("result");
-const possibleChoices = document.querySelectorAll(".btn-choice");
-let playerChoice;
-let result = 0;
 let rock = document.getElementById("Rock");
+const possibleChoices = document.querySelectorAll(".btn-choice");
 let playerScore = document.querySelector("#player-score");
 let computerScore = document.querySelector("#comp-score");
+const resetGameBtn = document.querySelector(".btn-reset");
+const gameMessageContainer = document.querySelector(".message");
+
+let playerChoice;
+let result = 0;
 let playerCounter = 0;
 let computerCounter = 0;
 
-//const randomNumber = Math.random() * possibleChoices.length;
+console.log(resetGameBtn);
 
 possibleChoices.forEach((possibleChoices) =>
   possibleChoices.addEventListener("click", (event) => {
@@ -36,27 +39,43 @@ function generateComputerChoice() {
   computerChoiceDisplay.innerHTML = computerChoice;
 }
 
+function updatePlayerCounter() {
+  playerCounter++;
+  playerScore.innerHTML = playerCounter;
+}
+
+function updateCompCounter() {
+  computerCounter++;
+  computerScore.innerHTML = computerCounter;
+}
+
 function getResult() {
   if (computerChoice === playerChoice) {
     result = "It's a Draw!";
   }
   if (computerChoice === "Rock" && playerChoice === "Paper") {
     result = "Player Wins!";
+    updatePlayerCounter();
   }
   if (computerChoice === "Rock" && playerChoice === "Scissors") {
     result = "Player loses!";
+    updateCompCounter();
   }
   if (computerChoice === "Paper" && playerChoice === "Scissors") {
     result = "Player Wins!";
+    updatePlayerCounter();
   }
   if (computerChoice === "Paper" && playerChoice === "Rock") {
     result = "Player loses!";
+    updateCompCounter();
   }
   if (computerChoice === "Scissors" && playerChoice === "Rock") {
     result = "Player Wins!";
+    updatePlayerCounter();
   }
   if (computerChoice === "Scissors" && playerChoice === "Paper") {
     result = "Player loses!";
+    updateCompCounter();
   }
   resultDisplay.innerHTML = result;
 }
@@ -69,20 +88,20 @@ timerClock.innerHTML = timeSecond;
 let countDown = setInterval(() => {
   timeSecond--;
   timerClock.innerHTML = timeSecond;
-  console.log(timeSecond);
   if (timeSecond <= 0) {
     clearInterval(countDown);
+
+    gameMessageContainer.innerHTML = `<p>Game Over</p>`;
   }
 }, 1000);
 
-//playerScore.innerHTML = "CHEESE";
-
-function scoreCounter() {
-  if (result == "Player Wins!") {
-    playerCounter++;
-    playerScore.innerHTML = playerCounter;
-  } else if (result == "Player loses!") {
-    computerCounter++;
-    computerScore.innerHTML = computerCounter;
-  }
-}
+const resetGame = () => {
+  timeSecond = 10;
+  playerCounter = 0;
+  computerCounter = 0;
+  playerScore.innerHTML = playerCounter;
+  computerScore.innerHTML = computerCounter;
+  gameMessageContainer.innerHTML = "";
+  countDown();
+};
+resetGameBtn.addEventListener("click", resetGame);

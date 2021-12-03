@@ -1,34 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+.clock {
+  position: relative;
+  margin: auto;
+  width: 15%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  border: solid black 5px;
+}
+
+#timer-header {
+  position: relative;
+  margin: auto;
+  color: magenta;
+  font-size: 40px;
+}
+
+#timer {
+  position: relative;
+  font-size: 50px;
+  color: green;
+}
+
+.btn-reset {
+  background-color: orange;
+  border-radius: 10px;
+}
+
 .btn-choice {
   text-align: center;
   width: 200px;
   height: 70px;
   background-color: #d3b88c;
   border-radius: 10px;
-}
-
-.headers {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-family: "Architects Daughter";
-  font-size: 20px;
-}
-
-.counters {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 #player-score {
@@ -51,20 +56,7 @@
   font-size: 30px;
 }
 
-#timer-header {
-  position: relative;
-  margin: auto;
-  color: magenta;
-  font-size: 40px;
-}
-
-#timer {
-  position: relative;
-  font-size: 50px;
-  color: green;
-}
-
-#weopen-text {
+#weopon-text {
   font-family: Georgia, "Times New Roman", Times, serif;
   text-indent: 5%;
   padding: 20px;
@@ -117,12 +109,28 @@ body {
   background-color: #9ebc9f;
 }
 
-.clock {
-  position: relative;
-  margin: auto;
-  width: 15%;
-  text-align: center;
-  border: solid black 5px;
+.headers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Architects Daughter";
+  font-size: 20px;
+}
+
+.counters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .selection {
@@ -136,5 +144,9 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.choice {
+  padding: 30px;
 }
 /*# sourceMappingURL=main.css.map */
