@@ -29,38 +29,32 @@
 //   "You can retrain in tech too!",
 // ]);
 
-const makeFullNameUpperCase = (firstName, lastName) => {
-  const fullName = firstName.toUpperCase() + " " + lastName.toUpperCase();
-  return fullName;
-};
+const makeFullNameUpperCase = (firstName, lastName) =>
+  `${firstName.toUpperCase()} ${lastName.toUpperCase()}`;
+
 console.log(makeFullNameUpperCase("wEs", "foRrEst"));
 
 const ageInDays = (birthday) => {
-  const aDate = new Date("01/17/2022");
-  const bday = new Date(birthday);
-  const diff = aDate.getTime() - bday.getTime();
+  const todaysDate = new Date();
+  const birthDate = new Date(birthday);
 
-  let ms = 1000 * 3600 * 24;
+  const differenceInMs = todaysDate.getTime() - birthDate.getTime();
+  const msInDay = 1000 * 60 * 60 * 24;
 
-  const result = diff / ms;
-  return result;
+  const numberOfDaysSinceBirth = Math.floor(differenceInMs / msInDay);
+  return `${numberOfDaysSinceBirth} days since birth`;
 };
 
 console.log(ageInDays("01/01/1970"));
 
 const findHeadlinesIncTech = (headlineArr) => {
-  let techHeadlineArray = [];
-  headlineArr.forEach((headline) => {
-    if (headline.includes("Tech")) {
-      return techHeadlineArray.push(headline);
-    } else {
-      console.log("nope not tech");
-    }
-  });
+  const techHeadlineArray = headlineArr.filter((headline) =>
+    headline.toLowerCase().includes("tech")
+  );
   return techHeadlineArray;
 };
 
-console.log(
+console.table(
   findHeadlinesIncTech([
     "Tech is booming",
     "Covid 19 yada yada yada",
