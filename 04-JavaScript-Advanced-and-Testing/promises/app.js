@@ -39,6 +39,7 @@
 // randomBeer();
 
 const makeBeerCard = (beer) => {
+  console.log(beer);
   return `
   <div class="beer-container">
   <h1>${beer.name}</h1>
