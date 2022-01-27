@@ -1,8 +1,19 @@
-.header {
-  border: 29px solid gold;
+.converter {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid gold;
+}
+
+#input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+#output-box {
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
-  font-size: 50px;
   color: gold;
 }

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morse Code Translator</title>
-    <link rel="stylesheet" href="main.css" />
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="app.js"></script>
   </head>
   <header class="header">
       <h1 id="title">Morse Code Translator</h1>
@@ -15,14 +15,19 @@
       <section class="top">
           <div>
               <h1>Type in your text to see the translation to morse code<h1>
+                  
           </div>
+          <button class="btn">
+              Press to convert
+          </button>
       </section>
       <section class="converter">
           <div id="input-box">
               <p>Type text to convert here</p>
+              <input class="input-value">
             </div>
             <div id="output-box">
-                <p>Your converted text will appear here in morse code</p>
+                <p class="output">Your converted text will appear here in morse code</p>
             </div>
       </section>
   </body>
