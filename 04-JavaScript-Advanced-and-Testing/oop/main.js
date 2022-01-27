@@ -116,3 +116,9 @@ class Ferrari extends Car {
     }
   }
 }
+
+const ferrari = new Ferrari(7);
+
+ferrari.steer(45);
+ferrari.accelerate(30);
+ferrari.accelerate(20);
