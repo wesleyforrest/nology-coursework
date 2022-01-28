@@ -1,6 +1,8 @@
 const btn = document.querySelector(".btn");
+const inputValue = document.querySelector(".input-value");
+const outputValue = document.querySelector(".output-value");
 
-const morseCode = {
+const englishToMorseCode = {
   A: ".-",
   B: "-...",
   C: "-.-.",
@@ -28,66 +30,60 @@ const morseCode = {
   Z: "--..",
 };
 
-const MorseToText = {
-  ".-": A,
-  "-...": B,
-  "-.-.": C,
-  "-..": D,
-  ".": E,
-  "..-.": F,
-  "--.": G,
-  "....": H,
-  "..": I,
-  ".---": J,
-  "-.-": K,
-  ".-..": L,
-  "--": M,
-  "-.": N,
-  "---": O,
-  ".--.": P,
-  "--.-": Q,
-  ".-.": R,
-  "...": S,
-  "-": T,
-  "..-": U,
-  "...-": V,
-  ".--": W,
-  "-..-": X,
-  "-.--": Y,
-  "--..": Z,
+const morseCodeToEnglish = {
+  ".-": "A",
+  "-...": "B",
+  "-.-.": "C",
+  "-..": "D",
+  ".": "E",
+  "..-.": "F",
+  "--.": "G",
+  "....": "H",
+  "..": "I",
+  ".---": "J",
+  "-.-": "K",
+  ".-..": "L",
+  "--": "M",
+  "-.": "N",
+  "---": "O",
+  ".--.": "P",
+  "--.-": "Q",
+  ".-.": "R",
+  "...": "S",
+  "-": "T",
+  "..-": "U",
+  "...-": "V",
+  ".--": "W",
+  "-..-": "X",
+  "-.--": "Y",
+  "--..": "Z",
 };
 
 class Translator {
-  constructor(input) {
-    this.input = input;
+  constructor(englishAlphabet, morseAlphabet) {
+    this.englishAlphabet = englishAlphabet;
+    this.morseAlphabet = morseAlphabet;
   }
-  convertInput(inputValue) {
-    console.log(this.input);
-    // console.log(
-    //   inputValue.split("").map((letter) => {
-    //     // this.input[letter];
-    //     console.log(this.input[letter]);
-    //   })
-    // );
-    //
-    return inputValue
-      .toUpperCase()
-      .split("")
-      .map((letter) => {
-        this.input[letter];
-      })
-      .join("");
 
-    //return console.log(inputValue);
+  convertToMorse(english) {
+    const convertedValue = english.toUpperCase().split("");
+    const mappedLetters = convertedValue
+      .map((letter) => {
+        return this.englishAlphabet[letter];
+      })
+      .join(" ");
+    return mappedLetters;
   }
+
+  convertToEnglish(morse) {}
 }
 
-const output = document.querySelector(".output");
-
-const englishTranslate = new Translator(morseCode);
+const translateToMorse = new Translator(englishToMorseCode, morseCodeToEnglish);
+const translateToEnglish = new Translator(
+  englishToMorseCode,
+  morseCodeToEnglish
+);
 
 btn.addEventListener("click", () => {
-  output.innerText = englishTranslate.convertInput(inputValue.value);
+  outputValue.innerText = translateToMorse.convertToMorse(inputValue.value);
 });
-
-const inputValue = document.querySelector(".input-value");

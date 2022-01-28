@@ -7,7 +7,9 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var btn = document.querySelector(".btn");
-var morseCode = {
+var inputValue = document.querySelector(".input-value");
+var outputValue = document.querySelector(".output-value");
+var englishToMorseCode = {
   A: ".-",
   B: "-...",
   C: "-.-.",
@@ -34,69 +36,66 @@ var morseCode = {
   Y: "-.--",
   Z: "--.."
 };
-var MorseToText = {
-  ".-": A,
-  "-...": B,
-  "-.-.": C,
-  "-..": D,
-  ".": E,
-  "..-.": F,
-  "--.": G,
-  "....": H,
-  "..": I,
-  ".---": J,
-  "-.-": K,
-  ".-..": L,
-  "--": M,
-  "-.": N,
-  "---": O,
-  ".--.": P,
-  "--.-": Q,
-  ".-.": R,
-  "...": S,
-  "-": T,
-  "..-": U,
-  "...-": V,
-  ".--": W,
-  "-..-": X,
-  "-.--": Y,
-  "--..": Z
+var morseCodeToEnglish = {
+  ".-": "A",
+  "-...": "B",
+  "-.-.": "C",
+  "-..": "D",
+  ".": "E",
+  "..-.": "F",
+  "--.": "G",
+  "....": "H",
+  "..": "I",
+  ".---": "J",
+  "-.-": "K",
+  ".-..": "L",
+  "--": "M",
+  "-.": "N",
+  "---": "O",
+  ".--.": "P",
+  "--.-": "Q",
+  ".-.": "R",
+  "...": "S",
+  "-": "T",
+  "..-": "U",
+  "...-": "V",
+  ".--": "W",
+  "-..-": "X",
+  "-.--": "Y",
+  "--..": "Z"
 };
 
 var Translator =
 /*#__PURE__*/
 function () {
-  function Translator(input) {
+  function Translator(englishAlphabet, morseAlphabet) {
     _classCallCheck(this, Translator);
 
-    this.input = input;
+    this.englishAlphabet = englishAlphabet;
+    this.morseAlphabet = morseAlphabet;
   }
 
   _createClass(Translator, [{
-    key: "convertInput",
-    value: function convertInput(inputValue) {
+    key: "convertToMorse",
+    value: function convertToMorse(english) {
       var _this = this;
 
-      console.log(this.input); // console.log(
-      //   inputValue.split("").map((letter) => {
-      //     // this.input[letter];
-      //     console.log(this.input[letter]);
-      //   })
-      // );
-      //
-
-      return inputValue.toUpperCase().split("").map(function (letter) {
-        _this.input[letter];
-      }).join(""); //return console.log(inputValue);
+      var convertedValue = english.toUpperCase().split("");
+      var mappedLetters = convertedValue.map(function (letter) {
+        return _this.englishAlphabet[letter];
+      }).join(" ");
+      return mappedLetters;
     }
+  }, {
+    key: "convertToEnglish",
+    value: function convertToEnglish(morse) {}
   }]);
 
   return Translator;
 }();
 
-var output = document.querySelector(".output");
-var englishTranslate = new Translator(morseCode);
+var translateToMorse = new Translator(englishToMorseCode, morseCodeToEnglish);
+var translateToEnglish = new Translator(englishToMorseCode, morseCodeToEnglish);
 btn.addEventListener("click", function () {
-  output.innerText = englishTranslate.convertInput(inputValue.value);
+  outputValue.innerText = translateToMorse.convertToMorse(inputValue.value);
 });
-var inputValue = document.querySelector(".input-value");

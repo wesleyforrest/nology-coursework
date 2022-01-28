@@ -4,16 +4,6 @@
   border: 2px solid gold;
 }
 
-#input-box {
-  display: flex;
-  flex-direction: column;
-}
-
-#output-box {
-  display: flex;
-  flex-direction: column;
-}
-
 h1 {
   color: gold;
 }
