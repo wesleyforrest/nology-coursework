@@ -2,6 +2,10 @@ const btn = document.querySelector(".btn");
 const inputValue = document.querySelector(".input-value");
 const outputValue = document.querySelector(".output-value");
 
+const btnNew = document.querySelector(".btn-to-english");
+const newInputValue = document.querySelector(".new-input-value");
+const newOutputValue = document.querySelector(".new-output-value");
+
 const englishToMorseCode = {
   A: ".-",
   B: "-...",
@@ -75,7 +79,16 @@ class Translator {
     return mappedLetters;
   }
 
-  convertToEnglish(morse) {}
+  convertToEnglish(morse) {
+    const convertedValueMorse = morse.toUpperCase().split("");
+    const mappedCode = convertedValueMorse
+      .map((code) => {
+        return this.morseAlphabet[code];
+      })
+      .join(" ");
+    console.log(mappedCode);
+    return mappedCode;
+  }
 }
 
 const translateToMorse = new Translator(englishToMorseCode, morseCodeToEnglish);
@@ -86,4 +99,10 @@ const translateToEnglish = new Translator(
 
 btn.addEventListener("click", () => {
   outputValue.innerText = translateToMorse.convertToMorse(inputValue.value);
+});
+
+btnNew.addEventListener("click", () => {
+  newOutputValue.innerText = translateToEnglish.convertToEnglish(
+    newInputValue.value
+  );
 });

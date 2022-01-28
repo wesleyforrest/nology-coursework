@@ -9,6 +9,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var btn = document.querySelector(".btn");
 var inputValue = document.querySelector(".input-value");
 var outputValue = document.querySelector(".output-value");
+var btnNew = document.querySelector(".btn-to-english");
+var newInputValue = document.querySelector(".new-input-value");
+var newOutputValue = document.querySelector(".new-output-value");
 var englishToMorseCode = {
   A: ".-",
   B: "-...",
@@ -88,7 +91,16 @@ function () {
     }
   }, {
     key: "convertToEnglish",
-    value: function convertToEnglish(morse) {}
+    value: function convertToEnglish(morse) {
+      var _this2 = this;
+
+      var convertedValueMorse = morse.toUpperCase().split("");
+      var mappedCode = convertedValueMorse.map(function (code) {
+        return _this2.morseAlphabet[code];
+      }).join(" ");
+      console.log(mappedCode);
+      return mappedCode;
+    }
   }]);
 
   return Translator;
@@ -98,4 +110,7 @@ var translateToMorse = new Translator(englishToMorseCode, morseCodeToEnglish);
 var translateToEnglish = new Translator(englishToMorseCode, morseCodeToEnglish);
 btn.addEventListener("click", function () {
   outputValue.innerText = translateToMorse.convertToMorse(inputValue.value);
+});
+btnNew.addEventListener("click", function () {
+  newOutputValue.innerText = translateToEnglish.convertToEnglish(newInputValue.value);
 });

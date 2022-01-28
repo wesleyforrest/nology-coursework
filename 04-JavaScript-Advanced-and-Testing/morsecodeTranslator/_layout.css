@@ -1,5 +1,14 @@
+header {
+  text-align: center;
+}
+
 .english-to-morse {
   border: 2px solid gold;
+  margin: 10px;
+}
+
+.morse-to-english {
+  border: 2px solid forestgreen;
   margin: 10px;
 }
 

@@ -16,8 +16,28 @@
   font-size: 20px;
 }
 
+.new-input-value {
+  width: 30%;
+  border: solid 2px black;
+}
+
+.new-output-value {
+  border: solid 2px black;
+  height: 100px;
+  font-size: 20px;
+}
+
+header {
+  text-align: center;
+}
+
 .english-to-morse {
   border: 2px solid gold;
+  margin: 10px;
+}
+
+.morse-to-english {
+  border: 2px solid forestgreen;
   margin: 10px;
 }
 
