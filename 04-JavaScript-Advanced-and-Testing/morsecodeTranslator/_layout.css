@@ -1,7 +1,6 @@
-.converter {
-  display: flex;
-  flex-direction: column;
+.english-to-morse {
   border: 2px solid gold;
+  margin: 10px;
 }
 
 h1 {
