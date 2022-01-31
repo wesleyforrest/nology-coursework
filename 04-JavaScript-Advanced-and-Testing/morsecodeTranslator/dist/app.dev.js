@@ -65,7 +65,8 @@ var morseCodeToEnglish = {
   ".--": "W",
   "-..-": "X",
   "-.--": "Y",
-  "--..": "Z"
+  "--..": "Z" //"/ ": " ",
+
 };
 
 var Translator =
@@ -94,11 +95,10 @@ function () {
     value: function convertToEnglish(morse) {
       var _this2 = this;
 
-      var convertedValueMorse = morse.toUpperCase().split("");
+      var convertedValueMorse = morse.split(" ");
       var mappedCode = convertedValueMorse.map(function (code) {
         return _this2.morseAlphabet[code];
-      }).join(" ");
-      console.log(mappedCode);
+      }).join("");
       return mappedCode;
     }
   }]);

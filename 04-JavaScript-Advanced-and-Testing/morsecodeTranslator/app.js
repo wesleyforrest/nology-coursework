@@ -61,6 +61,7 @@ const morseCodeToEnglish = {
   "-..-": "X",
   "-.--": "Y",
   "--..": "Z",
+  //"/ ": " ",
 };
 
 class Translator {
@@ -80,13 +81,12 @@ class Translator {
   }
 
   convertToEnglish(morse) {
-    const convertedValueMorse = morse.toUpperCase().split("");
+    const convertedValueMorse = morse.split(" ");
     const mappedCode = convertedValueMorse
       .map((code) => {
         return this.morseAlphabet[code];
       })
-      .join(" ");
-    console.log(mappedCode);
+      .join("");
     return mappedCode;
   }
 }
