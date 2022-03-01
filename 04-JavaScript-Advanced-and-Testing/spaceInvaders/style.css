@@ -1,0 +1,50 @@
+#mship {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+#dship {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+#fship {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.mothership {
+  width: 50px;
+  height: 50px;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.defence {
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.fighter {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
