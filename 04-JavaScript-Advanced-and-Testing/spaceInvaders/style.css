@@ -48,3 +48,15 @@
   align-items: center;
   justify-content: center;
 }
+
+.game-container {
+  margin: 50px;
+  border: solid black 2px;
+}
+
+#head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
