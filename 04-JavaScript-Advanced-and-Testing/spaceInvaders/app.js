@@ -1,33 +1,63 @@
-const mShip = m1;
+const mothership = document.querySelectorAll(".mothership");
 const allDefenceShips = document.querySelectorAll(".defence");
 const allFighterShips = document.querySelectorAll(".fighter");
 const individualDefenceShips = ["d1", "d2", "d3", "d4", "d5"];
 const individualFighterShip = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"];
 const fireBtn = document.querySelectorAll(".btn__fire");
 const resetBtn = document.querySelectorAll(".btn__reset");
+const shipArray = [];
+
+const motherShipContainer = document.querySelector("#mship");
+const defenceShipContainer = document.querySelector("#dship");
+const fighterShipContainer = document.querySelector("#fship");
 
 // 1. Create class for ship, initial value, points deducted on being hit
 
-class ship {
-  constructor(shipType, initialValue, pointsPerHit, currentValue) {
+class Ship {
+  constructor(shipType, initialValue, pointsPerHit, id) {
     this.shipType = shipType;
     this.initialValue = initialValue;
     this.pointsPerHit = pointsPerHit;
-    this.currentValue = currentValue;
+    this.id = id;
+  }
+  remainingLife() {
+    return this.initialValue - this.pointsPerHit;
+  }
+  renderShip() {
+    return `<p class=${this.shipType} id=${this.id}>${this.initialValue}</p>`;
   }
 }
 
-const motherShip = new ship("mothership", 100, 9, 100);
+const motherShip = new Ship("mothership", 100, 9, `ship-${1}`);
+shipArray.push(motherShip);
+motherShipContainer.innerHTML = motherShip.renderShip();
 
-const defenceShip = new ship("defence", 80, 10, 80);
+for (let i = 0; i < 5; i++) {
+  const defenceShip = new Ship("defence", 80, 10, `ship-${i + 2}`);
+  shipArray.push(defenceShip);
+  defenceShipContainer.innerHTML += defenceShip.renderShip();
+}
+for (let i = 0; i < 8; i++) {
+  const fighter = new Ship("fighter", 45, 12, `ship-${i + 7}`);
+  shipArray.push(fighter);
+  fighterShipContainer.innerHTML += fighter.renderShip();
+}
 
-const fighter = new ship("fighter", 45, 12, 45);
+console.log(shipArray);
 
 // 2. Select ship at random and identify its class.
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+function getRandomInt(id) {
+  return Math.floor(Math.random() * id);
 }
+
+const hitRandomShip = () => {
+  // Get random index based on the ShipArray length
+  // get random ship from shipArray using the random Index
+  const randomShipHit = shipArray[randomIndex];
+};
+
+// fireBtn.addEventListener('click', hitRandomShip);
 
 switch (shipNumber().shipName()) {
   case 0:
