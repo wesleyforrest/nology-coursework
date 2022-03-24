@@ -47,36 +47,40 @@ console.log(shipArray);
 
 // 2. Select ship at random and identify its class.
 
-function getRandomInt(id) {
-  return Math.floor(Math.random() * id);
-}
+const getRandomIndex = (id) => {
+  return Math.floor(Math.random() * shipArray.length);
+};
+console.log(getRandomIndex());
 
 const hitRandomShip = () => {
+  getRandomIndex();
+  return shipArray.id;
   // Get random index based on the ShipArray length
   // get random ship from shipArray using the random Index
   const randomShipHit = shipArray[randomIndex];
 };
+console.log(hitRandomShip());
 
 // fireBtn.addEventListener('click', hitRandomShip);
 
-switch (shipNumber().shipName()) {
-  case 0:
-    shipName = "mothership";
-    break;
-  case 1:
-    shipName = "defence";
-    break;
-  case 2:
-    shipName = "fighter";
-}
+// switch (shipNumber().shipName()) {
+//   case 0:
+//     shipName = "mothership";
+//     break;
+//   case 1:
+//     shipName = "defence";
+//     break;
+//   case 2:
+//     shipName = "fighter";
+// }
 
-console.log(shipNumber(getRandomInt(3)));
+// console.log(shipNumber(getRandomInt(3)));
 
-if (shipName == motherShip && currentValue > 0) {
+if (shipType == motherShip && currentValue > 0) {
   motherShip.currentValue - 9;
-} else if (shipName == defenceShip && currentValue > 0) {
+} else if (shipType == defenceShip && currentValue > 0) {
   defenceShip.currentValue - 10;
-} else if (shipName == fighter && currentValue > 0) {
+} else if (shipType == fighter && currentValue > 0) {
   fighter.currentValue - 12;
 } else {
   motherShip == 0;
