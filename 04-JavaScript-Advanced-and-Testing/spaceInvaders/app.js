@@ -1,10 +1,10 @@
-const mothership = document.querySelectorAll(".mothership");
-const allDefenceShips = document.querySelectorAll(".defence");
-const allFighterShips = document.querySelectorAll(".fighter");
-const individualDefenceShips = ["d1", "d2", "d3", "d4", "d5"];
-const individualFighterShip = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"];
-const fireBtn = document.querySelectorAll(".btn__fire");
-const resetBtn = document.querySelectorAll(".btn__reset");
+// const mothership = document.querySelectorAll(".mothership");
+// const allDefenceShips = document.querySelectorAll(".defence");
+// const allFighterShips = document.querySelectorAll(".fighter");
+// const individualDefenceShips = ["d1", "d2", "d3", "d4", "d5"];
+// const individualFighterShip = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"];
+const fireBtn = document.querySelector(".btn__fire");
+const resetBtn = document.querySelector(".btn__reset");
 const shipArray = [];
 
 const motherShipContainer = document.querySelector("#mship");
@@ -21,7 +21,7 @@ class Ship {
     this.id = id;
   }
   remainingLife() {
-    return this.initialValue - this.pointsPerHit;
+    return (this.initialValue = this.initialValue - this.pointsPerHit);
   }
   renderShip() {
     return `<p class=${this.shipType} id=${this.id}>${this.initialValue}</p>`;
@@ -50,18 +50,23 @@ console.log(shipArray);
 const getRandomIndex = (id) => {
   return Math.floor(Math.random() * shipArray.length);
 };
-console.log(getRandomIndex());
 
 const hitRandomShip = () => {
-  getRandomIndex();
-  return shipArray.id;
+  let randomIndex = Math.floor(Math.random() * shipArray.length);
+  let randomShipHit = shipArray[randomIndex].remainingLife();
+  console.log(randomShipHit);
+  console.log(`ship id is ${shipArray[randomIndex].id}`);
+  const hitShipHTML = document.querySelector(`#${shipArray[randomIndex].id}`);
+  hitShipHTML.innerText = "";
+  return (hitShipHTML.innerText = randomShipHit);
+  if (remainingLife <= 0) {
+    shipArray.id.hide;
+  }
   // Get random index based on the ShipArray length
   // get random ship from shipArray using the random Index
-  const randomShipHit = shipArray[randomIndex];
 };
 console.log(hitRandomShip());
-
-// fireBtn.addEventListener('click', hitRandomShip);
+fireBtn.addEventListener("click", hitRandomShip);
 
 // switch (shipNumber().shipName()) {
 //   case 0:
@@ -76,15 +81,15 @@ console.log(hitRandomShip());
 
 // console.log(shipNumber(getRandomInt(3)));
 
-if (shipType == motherShip && currentValue > 0) {
-  motherShip.currentValue - 9;
-} else if (shipType == defenceShip && currentValue > 0) {
-  defenceShip.currentValue - 10;
-} else if (shipType == fighter && currentValue > 0) {
-  fighter.currentValue - 12;
-} else {
-  motherShip == 0;
-}
+// if (shipType == motherShip && currentValue > 0) {
+//   motherShip.currentValue - 9;
+// } else if (shipType == defenceShip && currentValue > 0) {
+//   defenceShip.currentValue - 10;
+// } else if (shipType == fighter && currentValue > 0) {
+//   fighter.currentValue - 12;
+// } else {
+//   motherShip == 0;
+// }
 
 //3. Create if statememnt that identifies the ship and if appropriate, deducts the correct number of hitpoints
 
