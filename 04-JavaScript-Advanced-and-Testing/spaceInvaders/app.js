@@ -1,8 +1,3 @@
-// const mothership = document.querySelectorAll(".mothership");
-// const allDefenceShips = document.querySelectorAll(".defence");
-// const allFighterShips = document.querySelectorAll(".fighter");
-// const individualDefenceShips = ["d1", "d2", "d3", "d4", "d5"];
-// const individualFighterShip = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"];
 const fireBtn = document.querySelector(".btn__fire");
 const resetBtn = document.querySelector(".btn__reset");
 const shipArray = [];
@@ -28,6 +23,8 @@ class Ship {
   }
 }
 
+// 2. Create ships using JS
+
 const motherShip = new Ship("mothership", 100, 9, `ship-${1}`);
 shipArray.push(motherShip);
 motherShipContainer.innerHTML = motherShip.renderShip();
@@ -43,9 +40,7 @@ for (let i = 0; i < 8; i++) {
   fighterShipContainer.innerHTML += fighter.renderShip();
 }
 
-console.log(shipArray);
-
-// 2. Select ship at random and identify its class.
+// 3. Select ship at random using id.
 
 const getRandomIndex = (id) => {
   return Math.floor(Math.random() * shipArray.length);
@@ -54,19 +49,42 @@ const getRandomIndex = (id) => {
 const hitRandomShip = () => {
   let randomIndex = Math.floor(Math.random() * shipArray.length);
   let randomShipHit = shipArray[randomIndex].remainingLife();
-  console.log(randomShipHit);
-  console.log(`ship id is ${shipArray[randomIndex].id}`);
   const hitShipHTML = document.querySelector(`#${shipArray[randomIndex].id}`);
   hitShipHTML.innerText = "";
-  return (hitShipHTML.innerText = randomShipHit);
-  if (remainingLife <= 0) {
-    shipArray.id.hide;
+  if (randomShipHit <= 0) {
+    let shipIndex = shipArray.indexOf(shipArray[randomIndex]);
+    console.log(shipIndex);
+    shipArray.splice(shipIndex, 1);
+    console.log(shipArray);
+    hitShipHTML.parentNode.removeChild(hitShipHTML);
+    // if ship's current points is less than or equal to zero, then remove the HTML but also this ship from the shipArray.
+    /// hitShipHTML.style.display = "none";
   }
+
+  if (shipArray.length === 0 || Ship.motherShip.initialValue <= 0) {
+    gameOver();
+  }
+
+  return (hitShipHTML.innerText = randomShipHit);
+
   // Get random index based on the ShipArray length
   // get random ship from shipArray using the random Index
 };
+
+const gameOver = () => {
+  alert("All ships destroyed, Game Over!");
+};
+
 console.log(hitRandomShip());
 fireBtn.addEventListener("click", hitRandomShip);
+
+//Redundant code
+
+// const mothership = document.querySelectorAll(".mothership");
+// const allDefenceShips = document.querySelectorAll(".defence");
+// const allFighterShips = document.querySelectorAll(".fighter");
+// const individualDefenceShips = ["d1", "d2", "d3", "d4", "d5"];
+// const individualFighterShip = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"];
 
 // switch (shipNumber().shipName()) {
 //   case 0:
