@@ -58,7 +58,10 @@ h1 {
 }
 
 .game-container {
-  margin: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   border: solid silver 2px;
   background-color: #09090a;
 }
@@ -70,8 +73,14 @@ h1 {
   justify-content: center;
 }
 
-#btn {
+.btn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+}
+
+.btn .btn__reset {
+  background-color: red;
+  width: 300px;
 }

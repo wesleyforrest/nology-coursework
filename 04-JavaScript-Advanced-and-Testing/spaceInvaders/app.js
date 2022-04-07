@@ -1,6 +1,6 @@
 const fireBtn = document.querySelector(".btn__fire");
 const resetBtn = document.querySelector(".btn__reset");
-const shipArray = [];
+let shipArray = [];
 
 const motherShipContainer = document.querySelector("#mship");
 const defenceShipContainer = document.querySelector("#dship");
@@ -25,43 +25,54 @@ class Ship {
 
 // 2. Create ships using JS
 
-const motherShip = new Ship("mothership", 100, 9, `ship-${1}`);
-shipArray.push(motherShip);
-motherShipContainer.innerHTML = motherShip.renderShip();
+const buildGame = () => {
+  const motherShip = new Ship("mothership", 100, 9, `ship-${1}`);
+  shipArray.push(motherShip);
+  motherShipContainer.innerHTML = motherShip.renderShip();
 
-for (let i = 0; i < 5; i++) {
-  const defenceShip = new Ship("defence", 80, 10, `ship-${i + 2}`);
-  shipArray.push(defenceShip);
-  defenceShipContainer.innerHTML += defenceShip.renderShip();
-}
-for (let i = 0; i < 8; i++) {
-  const fighter = new Ship("fighter", 45, 12, `ship-${i + 7}`);
-  shipArray.push(fighter);
-  fighterShipContainer.innerHTML += fighter.renderShip();
-}
+  for (let i = 0; i < 5; i++) {
+    const defenceShip = new Ship("defence", 80, 10, `ship-${i + 2}`);
+    shipArray.push(defenceShip);
+    defenceShipContainer.innerHTML += defenceShip.renderShip();
+  }
+  for (let i = 0; i < 8; i++) {
+    const fighter = new Ship("fighter", 45, 12, `ship-${i + 7}`);
+    shipArray.push(fighter);
+    fighterShipContainer.innerHTML += fighter.renderShip();
+  }
+};
 
+buildGame();
 // 3. Select ship at random using id.
 
 const getRandomIndex = (id) => {
   return Math.floor(Math.random() * shipArray.length);
 };
+// What is this exactly?  Its not used again.....
 
 const hitRandomShip = () => {
-  let randomIndex = Math.floor(Math.random() * shipArray.length);
+  let randomIndex = getRandomIndex();
   let randomShipHit = shipArray[randomIndex].remainingLife();
   const hitShipHTML = document.querySelector(`#${shipArray[randomIndex].id}`);
-  hitShipHTML.innerText = "";
+  console.log(hitShipHTML);
+  //  hitShipHTML.innerText = "";
+
   if (randomShipHit <= 0) {
+    console.log(randomShipHit);
+    // when the points remaining is below 0 we want to set the points to 0 (e.g. if its -3 we want this to display as 0 in the html)
+    randomShipHit = 0;
+    // grabbing the index of the ship that points have just reached 0.
     let shipIndex = shipArray.indexOf(shipArray[randomIndex]);
     console.log(shipIndex);
+    // we're now removing this ship from the shipArray when its points have reached 0.
     shipArray.splice(shipIndex, 1);
     console.log(shipArray);
-    hitShipHTML.parentNode.removeChild(hitShipHTML);
+
     // if ship's current points is less than or equal to zero, then remove the HTML but also this ship from the shipArray.
     /// hitShipHTML.style.display = "none";
   }
 
-  if (shipArray.length === 0 || Ship.motherShip.initialValue <= 0) {
+  if (shipArray.length === 0) {
     gameOver();
   }
 
@@ -75,9 +86,17 @@ const gameOver = () => {
   alert("All ships destroyed, Game Over!");
 };
 
-console.log(hitRandomShip());
 fireBtn.addEventListener("click", hitRandomShip);
 
+const resetGame = () => {
+  motherShipContainer.innerHTML = "";
+  defenceShipContainer.innerHTML = "";
+  fighterShipContainer.innerHTML = "";
+  shipArray = [];
+  buildGame();
+};
+
+resetBtn.addEventListener("click", resetGame);
 //Redundant code
 
 // const mothership = document.querySelectorAll(".mothership");
